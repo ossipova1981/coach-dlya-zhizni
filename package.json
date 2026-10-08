@@ -1,0 +1,55 @@
+{
+  "name": "life-coach",
+  "version": "1.1.0",
+  "description": "Коуч для жизни",
+  "main": "electron-main.js",
+  "author": "Коуч для жизни",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win",
+    "android:sync": "node -e \"const fs=require('fs');const path=require('path');for (const dir of ['www','android/app/src/main/assets/public']){fs.mkdirSync(dir,{recursive:true});for (const f of ['index.html','app.js','styles.css','favicon.svg']) fs.copyFileSync(f,path.join(dir,f));}\""
+  },
+  "dependencies": {
+    "@capacitor/android": "5.7.8",
+    "@capacitor/core": "5.7.8"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "5.7.8",
+    "electron": "28.3.3",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "life.coach.app",
+    "productName": "Коуч для жизни",
+    "directories": {
+      "output": "C:/Users/79262/coach-desktop",
+      "buildResources": "build"
+    },
+    "files": [
+      "index.html",
+      "app.js",
+      "styles.css",
+      "favicon.svg",
+      "electron-main.js",
+      "build/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.png",
+      "signAndEditExecutable": false,
+      "signingHashAlgorithms": []
+    },
+    "forceCodeSigning": false,
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Коуч для жизни"
+    }
+  }
+}

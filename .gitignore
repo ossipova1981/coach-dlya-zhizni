@@ -1,0 +1,34 @@
+node_modules/
+npm-install.log
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+
+# Local builds / releases
+release/
+release-1.1/
+www/
+*.apk
+dist/
+out/
+
+# Electron / Android local caches
+android/.gradle/
+android/**/build/
+android/local.properties
+android/app/build/
+android/capacitor-cordova-android-plugins/
+*.iml
+.idea/
+.vscode/
+
+# Отдельный проект ИИ-коуча — не в этом репозитории
+ai-coach/
+
+# Desktop output outside repo
+C:/Users/79262/coach-desktop/
+
+build/_asar_extract/
